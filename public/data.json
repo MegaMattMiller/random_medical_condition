@@ -1,6 +1,13 @@
 {
   "bodyParts": [
+    "gums",
+    "fingernail",
+    "toenail",
+    "groin",
     "ankle",
+    "grundle",
+    "taint",
+    "groin",
     "arm",
     "back",
     "belly",
@@ -43,6 +50,8 @@
     "wrist"
   ],
   "adjectives": [
+    "blemished",
+    "swollen",
     "abandoned",
     "able",
     "absolute",
