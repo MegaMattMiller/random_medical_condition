@@ -2,7 +2,7 @@
   <b-jumbotron header="Random Ailment" lead="What's wrong with you?" class="text-center">
     <p>Press generate to get a new ailment</p>
     <p class="condition-box" id="ailment">{{ condition }}</p>
-    <b-button variant="primary" @click="getRandomCondition()">Generate</b-button>
+    <b-button variant="primary" @click="updateCondition(getRandomCondition())">Generate</b-button>
   </b-jumbotron>
 </template>
 
@@ -19,16 +19,17 @@ export default {
   },
   methods: {
     getRandomCondition: function () {
+      var newCon = '';
+      var adjective = this.$store.state.data.adjectives[
+        Math.floor(Math.random() * this.$store.state.data.adjectives.length)
+      ];
+      var noun = this.$store.state.data.bodyParts[Math.floor(Math.random() * this.$store.state.data.bodyParts.length)];
+      newCon = `${adjective} ${noun}`;
+      return newCon;
+    },
+    updateCondition: function (randomCondition) {
       this.animateCSS('#ailment', 'flipOutX').then(() => {
-        var newCon = '';
-        var adjective = this.$store.state.data.adjectives[
-          Math.floor(Math.random() * this.$store.state.data.adjectives.length)
-        ];
-        var noun = this.$store.state.data.bodyParts[
-          Math.floor(Math.random() * this.$store.state.data.bodyParts.length)
-        ];
-        newCon = `${adjective} ${noun}`;
-        this.condition = newCon;
+        this.condition = randomCondition;
         this.animateCSS('#ailment', 'flipInX');
       });
     },
