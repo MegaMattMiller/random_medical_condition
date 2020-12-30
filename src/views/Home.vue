@@ -2,7 +2,12 @@
   <b-jumbotron header="Random Ailment" lead="What's wrong with you?" class="text-center">
     <p>Press generate to get a new ailment</p>
     <p class="condition-box" id="ailment">{{ condition }}</p>
-    <b-button variant="primary" @click="updateCondition(getRandomCondition())">Generate</b-button>
+    <b-button variant="dark" @click="updateCondition(getRandomCondition())">Generate</b-button>
+    <footer>
+      <a href="https://github.com/MegaMattMiller/random_medical_condition"
+        ><b-icon icon="github" class="github-icon"></b-icon
+      ></a>
+    </footer>
   </b-jumbotron>
 </template>
 
@@ -67,5 +72,22 @@ export default {
   margin-bottom: 20px;
   width: 95%;
   max-width: 550px;
+}
+
+.github-icon {
+  width: 50px;
+  height: 50px;
+}
+
+footer {
+  margin-top: 50px;
+}
+
+a {
+  color: inherit;
+}
+
+a:hover {
+  color: inherit;
 }
 </style>
