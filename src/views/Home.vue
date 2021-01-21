@@ -4,11 +4,6 @@
       <p>Press generate to get a new ailment</p>
       <p class="condition-box" id="ailment">{{ condition }}</p>
       <b-button variant="dark" @click="updateCondition(getRandomCondition())">Generate</b-button>
-      <footer>
-        <a href="https://github.com/MegaMattMiller/random_medical_condition"
-          ><b-icon icon="github" class="github-icon"></b-icon
-        ></a>
-      </footer>
     </b-jumbotron>
   </b-overlay>
 </template>
